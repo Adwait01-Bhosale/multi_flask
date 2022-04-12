@@ -5,8 +5,9 @@ import numpy as np
 from PIL import Image
 from tkinter.filedialog import *
 
-def compress_image(im, target):
+def compress_image(im, target, name):
    """Save the image as JPEG with the given name at best quality that makes less than "target" bytes"""
+   name = name.split('.')[0]
    # Min and Max quality
    Qmin, Qmax = 25, 96
    # Highest acceptable quality found
@@ -28,10 +29,10 @@ def compress_image(im, target):
 
    # Write to disk at the defined quality
    if Qacc > -1:
-      for i in range(10000000):
-            im.save("Compressed02.jpg", format="JPEG", quality=Qacc)
+      im.save(f"{name}_compressed.jpg", format="JPEG", quality=Qacc)
+      # im.save("static/compressed/Compressed02.jpg", format="JPEG", quality=Qacc)
    else:
-      print("ERROR: No acceptble quality factor found", file=sys.stderr)
+      print("ERROR: No acceptable quality factor found", file=sys.stderr)
 
 # file=askopenfilename()
 # im=Image.open(file)

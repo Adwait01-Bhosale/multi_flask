@@ -4,33 +4,19 @@
 
 {%endblock %} {%block body%}
 
-<form method="POST" action="/arena/compressor" enctype="multipart/form-data">
+<form method="POST" action="/arena/compress" enctype="multipart/form-data">
   <br />
   <br />
   <br />
   <div class="form-group" id="compress1">
     <label for="exampleFormControlFile1">Choose an image to compress</label>
-    <input
-      type="file"
-      class="form-control-file"
-      id="image_input1"
-      name="file"
-      required
-    />
+    <input type="file" class="form-control-file" id="image_input1" name="file" required />
   </div>
   <br />
   <br />
   <div class="form-group">
-    <label for="exampleFormControlFile1"
-      >Enter the size to compress below</label
-    >
-    <input
-      type="number"
-      name="size"
-      class="form-control-file"
-      id="number_input"
-      required
-    />
+    <label for="exampleFormControlFile1">Enter the size to compress below</label>
+    <input type="number" name="size" class="form-control-file" id="number_input" required />
   </div>
   <br /><br />
   <div class="form-group">
